@@ -10,7 +10,9 @@ public class animationBot : MonoBehaviour
     private float _direction = 1;
     [SerializeField]
     private Animator _animator;
-
+    [SerializeField]
+    private GameObject _flashlight;
+    private bool _FlashLightBool = false;
     protected void Update()
     {
         
@@ -46,10 +48,16 @@ public class animationBot : MonoBehaviour
            {
                _direction = 1;
            }
+        //фонарик
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            if(!_flashlight.activeSelf)
+           _flashlight.SetActive(true);
+            else
+           _flashlight.SetActive(false);
 
+        }
 
-      
-       
 
     }
 
